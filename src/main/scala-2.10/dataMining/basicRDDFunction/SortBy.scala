@@ -11,6 +11,7 @@ object SortBy extends App{
 	val conf = new SparkConf()
 		.setMaster("local")
 		.setAppName("testRDDMethod")
+
 	val sc = new SparkContext(conf)
 	val arr = sc.parallelize(Array((1,"a"), (5,"e"), (3,"c"), (2,"b"), (4,"d")))
 	val result = arr.sortBy(word => word._1)
