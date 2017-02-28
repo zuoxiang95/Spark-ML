@@ -13,7 +13,7 @@ object Map extends App {
 		.setMaster("local")
 	val sc = new SparkContext(conf)
 	val arr = sc.parallelize(Array(1, 2, 3, 4, 5, 6))
-	val result = arr.map(x => List(x + 1)).collect
+	val result = arr.map(x => x + 1).collect
 	result foreach println
 	sc.stop()
 }
